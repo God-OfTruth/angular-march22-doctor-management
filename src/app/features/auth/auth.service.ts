@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { Role } from 'src/app/models/role';
 import { LoginResponse, User } from 'src/app/models/user';
+import { stringify } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class AuthService {
     //store in sessionStorage
     this._user = res.user;
     this._authToken = res.access_token;
+    sessionStorage.setItem("doctorSession", stringify({user:this._user, token: this._authToken}))
   }
 
   isUserLoggedIn(): boolean{
