@@ -1,14 +1,21 @@
-<p>login works!</p>
+<div class="container">
+  <h1>{{ Title }}</h1>
 
-<div>
-    <label for="username"></label>
-    <input id="username" type="text" #myUsername>
-</div>
-<div>
-    <label for="password"></label><input id="password" type="text" #myPassword>
-</div>
-<div>
-    <button (click)="onLoginClick(myUsername.value, myPassword.value)">
+  <div class="form-login">
+    <div id="input">
+      <label for="username">Username : </label>
+      <input id="username" type="text" #myUsername />
+    </div>
+
+    <div id="input">
+      <label for="password">Password : </label
+      ><input id="password" type="text" #myPassword />
+    </div>
+
+    <div>
+      <button (click)="onLoginClick(myUsername.value, myPassword.value)">
         Login
-    </button>
+      </button>
+    </div>
+  </div>
 </div>
