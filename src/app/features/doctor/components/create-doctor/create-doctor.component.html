@@ -1,1 +1,28 @@
-<p>create-doctor works!</p>
+<div class="container">
+  <h3>Create Doctor</h3>
+
+  <form novalidate [formGroup]="createDoctorForm" (ngSubmit)="onCreate()">
+    <div class="input">
+      <label for="id" class="input-label">ID: </label>
+      <input type="text" name="docId" class="input-text" formControlName="id" />
+    </div>
+
+    <div class="input">
+      <label for="name" class="input-label">Name:</label>
+      <input id="name" type="text" class="input-text" formControlName="name" />
+    </div>
+
+    <div class="input">
+      <label for="specialization" class="input-text">Specialization:</label>
+      <!-- <input id="specialization" type="text" formControlName="specialization">   -->
+      <select formControlName="specialization">
+        <option value="Neuro">Neurologist</option>
+        <option value="Physician">Physician</option>
+      </select>
+    </div>
+
+    <div>
+      <button>Create</button>
+    </div>
+  </form>
+</div>

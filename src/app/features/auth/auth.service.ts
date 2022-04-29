@@ -1,25 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Role } from 'src/app/models/role';
 import { LoginResponse, User } from 'src/app/models/user';
-import { stringify } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private _user?: User;
-  private _authToken?: string;
+  private _user: User | null = this.getUserInfoFromStorage();
+  private _authToken: string | null = this.getTokenFromStorage();
+  public loginState$: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(this._user)
 
   constructor(private http: HttpClient) { }
 
-  storeDetails(res: LoginResponse){
-    //store in sessionStorage
+  getUserInfoFromStorage(): User | null {
+    const userFromStorage = sessionStorage.getItem('user');
+    return userFromStorage? JSON.parse(userFromStorage) : null;
+  }
+
+  getTokenFromStorage(){
+    return sessionStorage.getItem('token');
+  }
+
+  storeDetails = (res: LoginResponse) => {
     this._user = res.user;
     this._authToken = res.access_token;
-    sessionStorage.setItem("doctorSession", stringify({user:this._user, token: this._authToken}))
+    sessionStorage.setItem('user', JSON.stringify(this._user));
+    sessionStorage.setItem('token', this._authToken);
+    this.loginState$.next(this._user);
   }
 
   isUserLoggedIn(): boolean{
@@ -38,14 +49,22 @@ export class AuthService {
     return this._user;
   }
 
-  createUser(){
+  logout(){
+    this._user = null;
+    this._authToken = null;
+    sessionStorage.removeItem('user');
+    this.loginState$.next(null);
+  }
+
+  createUser(username:string, password: string){
     return this.http.post<LoginResponse>('/api/auth/login', {
-      username: 'john',
-      password: 'changeme'
+      username,
+      password
     }).pipe(      
-      tap((response: LoginResponse) => {
-        this.storeDetails(response);
-      })
+      // tap((response: LoginResponse) => {
+      //   this.storeDetails(response);
+      // })
+      tap(this.storeDetails)
     );
   }
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
@@ -21,7 +23,9 @@ import { DoctorLayoutComponent } from './components/doctor-layout/doctor-layout.
   ],
   imports: [
     CommonModule,
-    DoctorRoutingModule
+    ReactiveFormsModule,
+    DoctorRoutingModule,
+    HttpClientModule
   ]
 })
 export class DoctorModule { }

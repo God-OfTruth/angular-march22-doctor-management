@@ -8,23 +8,26 @@ import { DoctorLayoutComponent } from './components/doctor-layout/doctor-layout.
 import { DoctorDetailsComponent } from './components/doctor-details/doctor-details.component';
 import { Role } from '../../models/role';
 import { AuthGuard } from '../auth/auth.guard';
+import { RoleGuard } from '../auth/role.guard';
 
 const routes: Routes = [
   {
-    path: 'doctor',
-    component: DoctorLayoutComponent,
-    canActivate: [AuthGuard],
+    path: '',
+    component: DoctorLayoutComponent, 
+    canActivate: [AuthGuard],   
     children: [
       {
         path: 'list',
         component: DoctorListComponent,
+        canActivate: [RoleGuard],
         data: {
           roles: [Role.ADMIN]
-        }        
+        },        
       },
       {
-        path: 'edit',
+        path: 'edit/:id',
         component: EditDoctorComponent,
+        canActivate: [RoleGuard],
         data: {
           roles: [Role.ADMIN]
         }
@@ -32,6 +35,7 @@ const routes: Routes = [
       {
         path: 'view',
         component: DoctorDetailsComponent,
+        canActivate: [RoleGuard],
         data: {
           roles: [Role.ADMIN, Role.USER]
         }
@@ -39,6 +43,7 @@ const routes: Routes = [
       {
         path: 'create',
         component: CreateDoctorComponent,
+        canActivate: [RoleGuard],
         data: {
           roles: [Role.ADMIN]
         }

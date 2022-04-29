@@ -1,1 +1,14 @@
 <p>login works!</p>
+
+<div>
+    <label for="username"></label>
+    <input id="username" type="text" #myUsername>
+</div>
+<div>
+    <label for="password"></label><input id="password" type="text" #myPassword>
+</div>
+<div>
+    <button (click)="onLoginClick(myUsername.value, myPassword.value)">
+        Login
+    </button>
+</div>

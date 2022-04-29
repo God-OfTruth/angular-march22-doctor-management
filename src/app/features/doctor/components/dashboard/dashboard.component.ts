@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorService } from '../../doctor.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private doctorService: DoctorService) { }
 
   ngOnInit(): void {
+    // this.doctorService.getDoctors()
+    //   .subscribe((val:any) => {
+    //     console.log(val);
+    //   })
   }
 
 }

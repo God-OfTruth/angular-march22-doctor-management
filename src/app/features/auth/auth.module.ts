@@ -16,6 +16,9 @@ import { UsernameDisplayComponent } from './components/username-display/username
     CommonModule,
     HttpClientModule,
     AuthRoutingModule
+  ],
+  exports: [
+    UsernameDisplayComponent
   ]
 })
 export class AuthModule { }
