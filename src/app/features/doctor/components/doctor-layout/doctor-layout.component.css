@@ -1,0 +1,18 @@
+.head{
+    background-color: aqua;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    
+}
+
+ul{
+    float: right;
+    gap: 50px;
+    display: flex;
+    justify-content: space-between;
+}
