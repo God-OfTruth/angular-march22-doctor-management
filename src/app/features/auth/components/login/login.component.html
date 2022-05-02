@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>{{ Title }}</h1>
 
   <div class="form-login">
@@ -18,4 +18,29 @@
       </button>
     </div>
   </div>
-</div>
+</div> -->
+<mat-card>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      Username: <input matInput #myUsername />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      Password: <input matInput #myPassword />
+    </mat-form-field>
+  </div>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onLoginClick(myUsername.value, myPassword.value)"
+    >
+      Login
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,10 +1,24 @@
-<div class="username-display">
+<!-- <mat-card-actions>
+        <div class="username-display">
+            <div *ngIf="user">
+                <h5>Welcome {{user.username}}</h5>
+                <button (click)="logout()">Logout</button>
+            </div>
+            <div *ngIf="!user">
+                <h5>Please login</h5>
+            </div>
+        </div>
+    </mat-card-actions> -->
+
+<mat-toolbar class="header">
+  <h1>Doctor Management</h1>
+  <div class="username-display">
     <div *ngIf="user">
-        <h5>Welcome {{user.username}}</h5>
-        <button (click)="logout()">Logout</button>
+      <h5>Welcome {{ user.username }}</h5>
+      <button (click)="logout()">Logout</button>
     </div>
     <div *ngIf="!user">
-        <h5>Please login</h5>
+      <h5>Please login</h5>
     </div>
-</div>
-
+  </div>
+</mat-toolbar>
