@@ -14,7 +14,7 @@ export class DoctorListComponent implements OnInit {
   update: boolean = false;
   id?:number  | any
 
-  displayedColumns: string[] = ['id', 'name', 'speciaization', 'action', 'delete'];
+  displayedColumns: string[] = ['id', 'name', 'speciaization', 'update', 'delete'];
   
 
   constructor(private doctorService: DoctorService, private routes: Router) {}
