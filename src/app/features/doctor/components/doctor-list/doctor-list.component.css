@@ -1,4 +1,4 @@
-.container{
+/* .container{
     align-content: space-around;
     text-align: center;
     width: 100%;
@@ -16,4 +16,13 @@ button{
     width: fit-content;
     font-size: 16px;
 }
+ */
+
+ .list{
+     width: 100vw;
+ }
+
+ table{
+     width: 100vw;
+ }
 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../../doctor.service';
-import { FormGroup, FormControl } from '@angular/forms';
 import { Doctor } from 'src/app/models/doctor';
 import { tap } from 'rxjs';
 import { Router } from '@angular/router';
@@ -11,12 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./doctor-list.component.css'],
 })
 export class DoctorListComponent implements OnInit {
-  data: string[] = ['a','b','c','d']
   doctors: Doctor[] = [];
   update: boolean = false;
   id?:number  | any
 
-
+  displayedColumns: string[] = ['id', 'name', 'speciaization', 'action', 'delete'];
   
 
   constructor(private doctorService: DoctorService, private routes: Router) {}
