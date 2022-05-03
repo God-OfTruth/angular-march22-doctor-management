@@ -1,18 +1,10 @@
-.container {
-    padding: 50px;
-    display: flex;
-    align-content: center;
-    width: 100vw;
-    flex-direction: column;
-    background-color: antiquewhite;
-    height: 100vh;
-    border: 1px solid aqua;
-    box-shadow: 5px 5px burlywood;
+*{
     text-align: center;
+    padding: 15px;
 }
 
 form {
-    padding: 11px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -22,22 +14,7 @@ form {
     background-color: rgb(232, 232, 232);
 }
 
-div {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    
-
-}
-.input-text{
-    border-radius: 15px;
-}
-
-button{
-    align-self: center;
-    height: 25px;
-    width: 200px;
-    border-radius: 15px;
-
+.createDoctorForm-input{
+    width: 70vw;
+    text-align: center;
 }

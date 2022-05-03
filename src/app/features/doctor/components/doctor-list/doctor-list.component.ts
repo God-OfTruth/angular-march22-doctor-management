@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./doctor-list.component.css'],
 })
 export class DoctorListComponent implements OnInit {
+  data: string[] = ['a','b','c','d']
   doctors: Doctor[] = [];
   update: boolean = false;
   id?:number  | any
@@ -23,7 +24,7 @@ export class DoctorListComponent implements OnInit {
   ngOnInit(): void {
     this.showDoc();
   }
-
+  
   showDoc() {
     this.doctorService.getDoctors().subscribe((doctors: Doctor[]) => {
       this.doctors = doctors;
