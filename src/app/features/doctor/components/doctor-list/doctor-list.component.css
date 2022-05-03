@@ -1,5 +1,4 @@
 .container{
-    border: 1px solid red;
     align-content: space-around;
     text-align: center;
     width: 100%;
@@ -9,14 +8,13 @@
 .table{
     /* justify-self: center; */
     padding: 50px 200px;
-    border: 1px solid red;
     width: 100%;
     font-size: 20px;
     background-color: rgb(182, 224, 235);
 }
 
 button{
-    font-size: 15px;
-    padding: 5px;
+    width: fit-content;
+    font-size: 16px;
 }
 

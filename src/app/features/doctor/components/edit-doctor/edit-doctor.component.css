@@ -1,4 +1,9 @@
 
+*{
+    text-align: center;
+    padding: 15px;
+}
+
 form {
     padding: 11px;
     display: flex;
@@ -12,4 +17,10 @@ form {
 
 .updateDoctorForm-input{
     width: 70vw;
+    text-align: center;
+}
+
+.button{
+    width: 200px;
+    border-radius: 15px;
 }
