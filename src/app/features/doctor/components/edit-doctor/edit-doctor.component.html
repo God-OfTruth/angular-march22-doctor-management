@@ -1,4 +1,4 @@
-<h3>Update Doctor</h3>
+<!-- <h3>Update Doctor</h3>
 
   <form  [formGroup]="updateDoctorForm" (ngSubmit)="onUpdate()">
     <div>
@@ -20,4 +20,45 @@
     <div>
       <button>Update</button>
     </div>
-  </form>
+  </form> -->
+
+  <mat-card>
+    <h3>Update Doctor</h3>
+    <form [formGroup]="updateDoctorForm" (ngSubmit)="onUpdate()">
+
+      <mat-form-field class="updateDoctorForm-input" appearance="fill">
+        <mat-label>ID : </mat-label>
+        <input
+          matInput
+          placeholder="Doctor Id"
+          type="number"
+          formControlName="id"
+        />
+      </mat-form-field>
+  
+      <mat-form-field class="updateDoctorForm-input" appearance="fill">
+        <mat-label>Name : </mat-label>
+        <input
+          matInput
+          placeholder="Doctor Name"
+          type="text"
+          formControlName="name"
+        />
+      </mat-form-field>
+  
+      <mat-form-field class="updateDoctorForm-input" appearance="fill">
+        <mat-label>Specialization : </mat-label>
+        <input
+          matInput
+          placeholder="Doctor Specialization"
+          type="text"
+          formControlName="specialization"
+        />
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary">
+        Submit
+      </button>
+
+    </form>
+  </mat-card>
