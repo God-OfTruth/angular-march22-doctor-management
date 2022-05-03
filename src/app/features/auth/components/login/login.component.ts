@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     username: new FormControl(),
     password: new FormControl()
   }, [Validators.required, Validators.minLength(3)])
+  hide= true
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {

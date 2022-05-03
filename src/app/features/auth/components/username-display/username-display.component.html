@@ -1,8 +1,11 @@
 <mat-toolbar class="header" color="primary">
+  <button mat-mini-fab color="warn" aria-label="logout button" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
   <h1>Doctor Management</h1>
   <div class="username-display">
     <div *ngIf="user" id="display">
-      <h5>Welcome {{ user.username }}</h5>
+      <h5>Welcome {{ user.username | uppercase}}</h5>
       <button mat-mini-fab color="warn" aria-label="logout button" (click)="logout()">
         <mat-icon>logout</mat-icon>
       </button>

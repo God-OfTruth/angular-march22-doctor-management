@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
@@ -36,7 +37,8 @@ import { DoctorLayoutComponent } from './components/doctor-layout/doctor-layout.
     MatIconModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule
   ]
 })
 export class DoctorModule { }

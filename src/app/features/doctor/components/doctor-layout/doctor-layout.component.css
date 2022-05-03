@@ -1,4 +1,4 @@
-.head{
+/* .head{
     background-color: aqua;
 }
 .head{
@@ -15,4 +15,18 @@ ul{
     gap: 50px;
     display: flex;
     justify-content: space-between;
+} */
+/* .flex{
+    justify-content: space-between;
+} */
+
+.nav{
+    justify-content: space-between;
+    padding: 25px 50px;
+}
+
+.nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
 }

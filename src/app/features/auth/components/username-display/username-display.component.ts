@@ -23,4 +23,8 @@ export class UsernameDisplayComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
+  home(){
+    this.router.navigateByUrl('/')
+  }
+
 }

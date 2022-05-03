@@ -1,7 +1,7 @@
-<mat-card class="login">
-  <h2>{{title}}</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onLoginClick()">
-    <mat-form-field class="loginForm-input" appearance="fill">
+<mat-card class="login" >
+  <h2>{{ title }}</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLoginClick()" >
+    <mat-form-field class="loginForm-input" appearance="fill" color="warn">
       <mat-label>Username : </mat-label>
       <input
         type="text"
@@ -18,7 +18,17 @@
         matInput
         placeholder="Password"
         formControlName="password"
+        [type]="hide ? 'password' : 'text'"
       />
+      <button id="eye"
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
     </mat-form-field>
 
     <button mat-raised-button color="primary">Login</button>
