@@ -1,64 +1,36 @@
-<!-- <h3>Update Doctor</h3>
+<mat-card>
+  <h3>Update Doctor</h3>
+  <form [formGroup]="updateDoctorForm" (ngSubmit)="onUpdate()">
+    <mat-form-field class="updateDoctorForm-input" appearance="fill">
+      <mat-label>ID : </mat-label>
+      <input
+        matInput
+        placeholder="Doctor Id"
+        type="number"
+        formControlName="id"
+      />
+    </mat-form-field>
 
-  <form  [formGroup]="updateDoctorForm" (ngSubmit)="onUpdate()">
-    <div>
-      <label for="id"></label>
-      <input type="number" name="id" formControlName="id" [contentEditable]="e">
-    </div>
-    <div>
-      <label for="name">Name:</label>
-      <input id="name" type="text" formControlName="name" />
-    </div>
-    <div>
-      <label for="specialization">Specialization:</label>
-      <input id="specialization" type="text" formControlName="specialization" />
-      <select name="" id="">
-        <option value="">Neurologist</option>
-        <option value="">Physician</option>
-      </select>
-    </div>
-    <div>
-      <button>Update</button>
-    </div>
-  </form> -->
+    <mat-form-field class="updateDoctorForm-input" appearance="fill">
+      <mat-label>Name : </mat-label>
+      <input
+        matInput
+        placeholder="Doctor Name"
+        type="text"
+        formControlName="name"
+      />
+    </mat-form-field>
 
-  <mat-card>
-    <h3>Update Doctor</h3>
-    <form [formGroup]="updateDoctorForm" (ngSubmit)="onUpdate()">
+    <mat-form-field class="updateDoctorForm-input" appearance="fill">
+      <mat-label>Specialization : </mat-label>
+      <input
+        matInput
+        placeholder="Doctor Specialization"
+        type="text"
+        formControlName="specialization"
+      />
+    </mat-form-field>
 
-      <mat-form-field class="updateDoctorForm-input" appearance="fill">
-        <mat-label>ID : </mat-label>
-        <input
-          matInput
-          placeholder="Doctor Id"
-          type="number"
-          formControlName="id"
-        />
-      </mat-form-field>
-  
-      <mat-form-field class="updateDoctorForm-input" appearance="fill">
-        <mat-label>Name : </mat-label>
-        <input
-          matInput
-          placeholder="Doctor Name"
-          type="text"
-          formControlName="name"
-        />
-      </mat-form-field>
-  
-      <mat-form-field class="updateDoctorForm-input" appearance="fill">
-        <mat-label>Specialization : </mat-label>
-        <input
-          matInput
-          placeholder="Doctor Specialization"
-          type="text"
-          formControlName="specialization"
-        />
-      </mat-form-field>
-  
-      <button class="button" mat-raised-button color="primary">
-        Submit
-      </button>
-
-    </form>
-  </mat-card>
+    <button class="button" mat-raised-button color="primary">Submit</button>
+  </form>
+</mat-card>

@@ -1,25 +1,5 @@
-<!-- <div class="container">
-  <h1>{{ Title }}</h1>
-
-  <div class="form-login">
-    <div id="input">
-      <label for="username">Username : </label>
-      <input id="username" type="text" #myUsername />
-    </div>
-
-    <div id="input">
-      <label for="password">Password : </label
-      ><input id="password" type="text" #myPassword />
-    </div>
-
-    <div>
-      <button (click)="onLoginClick(myUsername.value, myPassword.value)">
-        Login
-      </button>
-    </div>
-  </div>
-</div> -->
 <mat-card>
+  
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Input</mat-label>
@@ -38,9 +18,9 @@
     <button
       mat-raised-button
       color="primary"
-      (click)="onLoginClick(myUsername.value, myPassword.value)"
-    >
+      (click)="onLoginClick(myUsername.value, myPassword.value)">
       Login
     </button>
   </mat-card-actions>
+  
 </mat-card>
