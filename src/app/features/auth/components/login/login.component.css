@@ -1,10 +1,20 @@
-
-
-#input{
-    width: 300px;
-    font-size: 20px;
+*{
+    text-align: center;
+    padding: 15px;
 }
 
-button{
-    border-radius: 10px;
+form {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 8px;
+    background-color: rgb(232, 232, 232);
+}
+
+.loginForm-input{
+    width: 100vw;
+    text-align: center;
 }

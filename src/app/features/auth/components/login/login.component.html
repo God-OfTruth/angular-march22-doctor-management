@@ -1,5 +1,5 @@
-<mat-card>
-  
+<!-- <mat-card>
+
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Input</mat-label>
@@ -23,4 +23,31 @@
     </button>
   </mat-card-actions>
   
+</mat-card> -->
+
+<mat-card class="login">
+  <h2>{{title}}</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLoginClick()">
+    <mat-form-field class="loginForm-input" appearance="fill">
+      <mat-label>Username : </mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Username"
+        formControlName="username"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="loginForm-input" appearance="fill">
+      <mat-label>Password : </mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Password"
+        formControlName="password"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Login</button>
+  </form>
 </mat-card>

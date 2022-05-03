@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { FormControlName, FormGroup, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,16 +11,21 @@ import { FormControlName, FormGroup, FormsModule } from '@angular/forms';
 })
 
 export class LoginComponent implements OnInit {
-  Title:string = 'Login'
+  title:string = 'Login'
+  loginForm = new FormGroup({
+    username: new FormControl(),
+    password: new FormControl()
+  }, [Validators.required, Validators.minLength(3)])
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     
   }
 
-  onLoginClick(username:string, password: string){
+  onLoginClick(){
+    const form = this.loginForm.value;
     this.authService
-    .createUser(username, password)
+    .createUser(form.username, form.password)
     .subscribe((val: any) => {
       console.log(val);      
       this.router.navigateByUrl('/doctor');
