@@ -18,6 +18,7 @@ import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.compon
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DoctorLayoutComponent } from './components/doctor-layout/doctor-layout.component';
 import {MatTableModule} from '@angular/material/table';
+import { ChartCategoryComponent } from './components/chart-category/chart-category.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatTableModule} from '@angular/material/table';
     CreateDoctorComponent,
     EditDoctorComponent,
     DashboardComponent,
-    DoctorLayoutComponent
+    DoctorLayoutComponent,
+    ChartCategoryComponent
   ],
   imports: [
     CommonModule,

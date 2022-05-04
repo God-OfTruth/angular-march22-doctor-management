@@ -10,7 +10,16 @@ export class DashboardComponent implements OnInit {
 
   constructor(private doctorService: DoctorService) { }
 
-  ngOnInit(): void {
-  }
+  docCount?:number
+ 
 
+  ngOnInit(): void {
+    this.getDocCount()
+    
+  }
+  getDocCount() {
+    this.doctorService.docSummary().subscribe((doctors:any) => {
+      this.docCount=doctors.totalCount;
+    });
+  }
 }

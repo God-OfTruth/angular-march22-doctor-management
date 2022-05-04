@@ -36,4 +36,7 @@ export class DoctorService {
     return this.http.patch(`/api/doctors/${id}`, newUser,);
   }
 
+  docSummary(){
+    return this.http.get('api/doctors/summary')
+  }
 }
