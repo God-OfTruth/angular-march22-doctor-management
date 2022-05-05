@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../../doctor.service';
+import { DoctorSummary } from '../../../../models/data'
 
 @Component({
   selector: 'app-chart-category',
@@ -9,10 +10,7 @@ import { DoctorService } from '../../doctor.service';
 export class ChartCategoryComponent implements OnInit {
 
 
-  doc?:{
-    totalCount: number,
-    category:any
-  }
+  doc?:any
 
   constructor(private doctorService: DoctorService) { }
 
@@ -20,7 +18,7 @@ export class ChartCategoryComponent implements OnInit {
     this.showDoc()
   }
   showDoc() {
-    this.doctorService.docSummary().subscribe((doctors:any) => {
+    this.doctorService.getSummary().subscribe((doctors:DoctorSummary) => {
       this.doc = doctors;
       console.log(this.doc);
     });

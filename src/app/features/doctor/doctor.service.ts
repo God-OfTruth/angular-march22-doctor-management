@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { Doctor } from '../../models/doctor';
+import {DocSummary, DoctorSummary} from '../../models/data'
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +38,23 @@ export class DoctorService {
     return this.http.patch(`/api/doctors/${id}`, newUser,);
   }
 
-  docSummary(){
-    return this.http.get('api/doctors/summary')
+  getSummary(): Observable<DoctorSummary>{
+    return this.http
+    .get<DocSummary>('api/doctors/summary')
+      .pipe(
+        map((doctorSummary: DocSummary) => {
+          const specialization = Object.keys(doctorSummary.category);
+          const categories = specialization.map(sp => {
+                                return {
+                                  name : sp,
+                                  value: doctorSummary.category[sp]
+            }
+          })
+          return {
+            totalCount: doctorSummary.totalCount,
+            categories
+          };
+        })
+      )
   }
 }

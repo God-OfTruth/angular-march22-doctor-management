@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
     
   }
   getDocCount() {
-    this.doctorService.docSummary().subscribe((doctors:any) => {
+    this.doctorService.getSummary().subscribe((doctors:any) => {
       this.docCount=doctors.totalCount;
     });
   }
