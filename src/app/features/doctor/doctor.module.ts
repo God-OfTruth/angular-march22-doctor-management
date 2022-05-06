@@ -19,7 +19,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DoctorLayoutComponent } from './components/doctor-layout/doctor-layout.component';
 import {MatTableModule} from '@angular/material/table';
 import { ChartCategoryComponent } from './components/chart-category/chart-category.component';
-
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { ChartCategoryComponent } from './components/chart-category/chart-catego
     ReactiveFormsModule,
     DoctorRoutingModule,
     HttpClientModule,
+    NgChartsModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,

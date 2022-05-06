@@ -18,3 +18,8 @@ export type DoctorSummary = {
   totalCount: number;
   categories: Specialization[]
 }
+
+export type chartData = {
+  key: string[];
+  values: number[];
+}

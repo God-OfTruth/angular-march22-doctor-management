@@ -1,4 +1,14 @@
 <p>chart-category works!</p>
 
-<!-- <h1>{{doc?.category.neuro}}</h1> -->
-<!-- <h1>{{category?.count}}</h1> --> 
+<div *ngIf="isDataAvl" class="chart">
+    <canvas
+  baseChart
+  [data]="pieChartData"
+  [type]="pieChartType"
+  [options]="pieChartOptions"
+  [plugins]="pieChartPlugins"
+>
+</canvas>
+</div>
+
+<div *ngIf="!isDataAvl"></div>
