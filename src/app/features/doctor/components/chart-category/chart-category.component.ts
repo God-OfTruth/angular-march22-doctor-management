@@ -2,9 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DoctorService } from '../../doctor.service';
 import { chartData } from '../../../../models/data'
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { map } from 'rxjs';
 
 
 @Component({
@@ -23,35 +22,23 @@ export class ChartCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.showDoc()
-    
-    // this.console()
-    console.log("Data",this.data);
-    // console.log("Label",this.label);
-    // console.log("doc",this.doc);
+    console.log("onInit");
     
   }
   
-  
-  console(){
-    console.log(this.doc);
-    console.log(this.label);
-    console.log(this.data);
-  }
   
   showDoc() {
     this.doctorService.getSummary().subscribe((doctors:chartData) => {
-      map((val)=> this.doc=val)
-     
+      console.log("Response from Service ",doctors);
       // this.isDataAvl = true
       // console.log("Log From subscriber");
+      this.doc = doctors;
       
       // console.log(doctors);
-      
-      // this.doc = doctors;
-
-      // this.label=this.doc["key"]
-      // this.data=this.doc["values"]
-      
+      this.label=this.doc["key"]
+      this.data=this.doc["values"]
+      console.log("Saved Data to Data Array ",this.data);
+      console.log('Saved Data to label Array ',this.label);      
     });
   }
 
